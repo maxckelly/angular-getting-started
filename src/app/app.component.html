@@ -290,26 +290,17 @@
 </style>
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<div>
   <h1>{{title}}</h1>
 </div>
 
-<div class="content" role="main">
-
-  <app-heroes></app-heroes>
-  <hr />
-  <app-messages></app-messages>
-
+<div>
+  <nav>
+    <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/dashboard">Dashboard</a>
+  </nav>
 </div>
 
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-
 <router-outlet></router-outlet>
+<hr />
+<app-messages></app-messages>
