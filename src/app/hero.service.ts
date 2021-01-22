@@ -19,7 +19,7 @@ export class HeroService {
   httpOptions = {
     headers: new HttpHeaders({'Content-Type': 'application/json'})
   };
-  
+
   constructor(
     private http: HttpClient,
     private messageService: MessageService
@@ -44,12 +44,12 @@ export class HeroService {
 
   // PUT call to update hero
   updateHero(hero: Hero): Observable<any> {
+    console.log(hero)
     return this.http.put(this.heroesUrl, hero, this.httpOptions).pipe(
       tap(_ => this.log(`Updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
     )
   }
-
 
   // Log a HeroService message with MessageService 
   private log(message: string) {
