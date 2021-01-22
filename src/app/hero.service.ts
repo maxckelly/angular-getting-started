@@ -49,6 +49,14 @@ export class HeroService {
       tap(_ => this.log(`Updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
     )
+  };
+
+  // POST: ADd a new hero to server
+  addHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap((newHero: Hero) => this.log(`Added hero with id=${newHero.id}`)),
+      catchError(this.handleError<Hero>('addHero'))
+    );
   }
 
   // Log a HeroService message with MessageService 
